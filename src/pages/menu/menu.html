@@ -1,0 +1,16 @@
+<ion-split-pane>
+  <ion-menu [content]="content" [maxEdgeStart]="150">
+    <ion-list>
+    	<ion-item *ngFor="let p of pages" menuClose detail-none (tap)="openPage(p)">
+        {{p.title}} - Tap
+      </ion-item>
+    </ion-list>
+    <ion-list>
+    	<ion-item *ngFor="let p of pages" menuClose detail-none (click)="openPage(p)">
+        {{p.title}} - Click
+      </ion-item>
+    </ion-list>
+  </ion-menu>
+
+  <ion-nav #content main [root]="rootPage"></ion-nav>
+</ion-split-pane>
